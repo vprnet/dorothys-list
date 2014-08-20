@@ -1,0 +1,14 @@
+div.above_fold {
+    img {
+        margin: 20px auto 30px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .highlight {
+        margin-top: 25px;
+        background: lighten($blue, 40%);
+        padding: 15px 10px 10px;
+        text-align: center;
+    }
+}

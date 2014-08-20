@@ -1,0 +1,32 @@
+@import "bootstrap";
+@import "vpr";
+@import "vpr-svg";
+@import "ionicons";
+@import "above_fold";
+@import "books";
+@import "about";
+@import "scrapbook";
+@import "player";
+
+div#button_nav {
+    margin-bottom: 20px;
+    button {
+        width: 100%;
+        @media (max-width: $tablet) {
+            border-radius: 0;
+        }
+    }
+    button.btn-primary {
+        background: lighten($blue, 20%);
+        border-color: lighten($blue, 10%);
+        &:hover {
+            background: $blue;
+        }
+    }
+    button.btn-success {
+        background: lighten($green, 5%);
+        &:hover {
+            background: darken($green, 5%);
+        }
+    }
+}
