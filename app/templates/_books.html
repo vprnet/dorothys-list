@@ -5,14 +5,16 @@
     {% if loop.first or loop.index0 is divisibleby 2 %}
     <div class="row">
     {% endif %}
-        <div class="book col-md-6">
-            <div class="row">
-                <img class="col-xs-4 img-responsive" src="{{ book.imageurl }}" alt="{{ book.title }} book cover">
-                <div class="col-xs-8">
-                    <h2>{{ book.title }}</h2>
-                    <p>{{ book.summary|safe }}</p>
-                    {{ macros.player(book.audiourl, book.audiolength, "Listen") }}
+        <div class="col-md-6">
+            <div class="book">
+                <div class="book_content row">
+                    <img class="col-xs-4 img-responsive" src="{{ book.imageurl }}" alt="{{ book.title }} book cover">
+                    <div class="col-xs-8">
+                        <h2>{{ book.title }}</h2>
+                        <p>{{ book.summary|safe }}</p>
+                    </div>
                 </div>
+            {{ macros.player(book.audiourl, book.audiolength, "Listen") }}
             </div>
         </div>
     {% if loop.last or loop.index is divisibleby 2 %}

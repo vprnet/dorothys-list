@@ -1,5 +1,5 @@
 div.audio_player {
-    background: lighten($gray, 40%);
+    background: white;
     height: 40px;
     margin-left: 40px;
     max-width: 555px;
@@ -16,7 +16,7 @@ div.audio_player {
     }
     .progress_bar {
         display: inline-block;
-        background: lighten($gray, 25%);
+        background: $blue;
         height: 100%;
         width: 0%;
         vertical-align: top;
@@ -27,7 +27,7 @@ div.audio_player {
     .duration, .audio_title {
         position: absolute;
         top: 2px;
-        color: $blue;
+        color: $black;
         font-weight: 500;
         height: 40px;
         padding: 8px 30px 8px;

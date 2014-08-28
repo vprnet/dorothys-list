@@ -15,8 +15,13 @@ DL.buttonClick = function() {
             DL[DL.tabs[i]].hide();
         }
     }
+    if (thisTab === 'scrapbook' && typeof DL.iframe.attr("src") === 'undefined') {
+        DL.iframe.attr("src", "//storify.com/vprnet/town-meeting-day-in-vermont-2014/embed?header=false&border=false");
+        $('#iframe_script').attr('src', 'storify.com/vprnet/town-meeting-day-in-vermont-2014.js?header=false&border=false');
+    }
 };
 
+DL.iframe = $('iframe#storify');
 DL.tabs = ['books', 'about', 'scrapbook'];
 for (var i=0; i<DL.tabs.length; i++) {
     tabName = DL.tabs[i];
@@ -24,7 +29,6 @@ for (var i=0; i<DL.tabs.length; i++) {
     DL[tabName + 'Btn'] = $('#' + tabName + '-btn');
     DL[tabName + 'Btn'].on("click", DL.buttonClick);
 }
-
 
 if (document.createElement('audio').canPlayType) {
     if (!document.createElement('audio').canPlayType('audio/mpeg')) {

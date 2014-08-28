@@ -17,6 +17,7 @@ content_types = {
     '.js': 'text/javascript',
     '.png': 'image/png',
     '.jpg': 'image/jpeg',
+    '.pdf': 'application/pdf',
     '.jpeg': 'image/jpeg',
     '.JPG': 'image/jpeg',
     '.bmp': 'image/bmp',

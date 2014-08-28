@@ -9205,30 +9205,64 @@ div.above_fold .highlight {
   text-align: center;
 }
 
-/* line 2, ../dev/sass/_books.scss */
-#books .book {
+/* line 1, ../dev/sass/_books.scss */
+#books {
   margin-bottom: 30px;
+}
+/* line 3, ../dev/sass/_books.scss */
+#books .book {
+  background: #eaebeb;
+  border-right: 5px solid #307fe2;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+/* line 7, ../dev/sass/_books.scss */
+#books .book .book_content {
+  min-height: 250px;
+  margin-bottom: 20px;
+}
+/* line 11, ../dev/sass/_books.scss */
+#books .book h2 {
+  margin-top: 0;
 }
 
 /* line 1, ../dev/sass/_about.scss */
 #about {
   display: none;
+  margin-bottom: 30px;
 }
 
 /* line 1, ../dev/sass/_scrapbook.scss */
 #scrapbook {
   display: none;
-}
-/* line 3, ../dev/sass/_scrapbook.scss */
-#scrapbook h2 {
+  margin-bottom: 30px;
   text-align: center;
+}
+/* line 5, ../dev/sass/_scrapbook.scss */
+#scrapbook h2 {
   font-size: 72px;
   font-weight: 200;
+}
+/* line 9, ../dev/sass/_scrapbook.scss */
+#scrapbook iframe {
+  border-bottom: 1px solid #75787b;
+  margin-bottom: 10px;
+}
+/* line 13, ../dev/sass/_scrapbook.scss */
+#scrapbook p {
+  font-size: 18px;
+}
+/* line 15, ../dev/sass/_scrapbook.scss */
+#scrapbook p i {
+  font-size: 24px;
+  position: relative;
+  top: 3px;
+  padding: 0 10px;
 }
 
 /* line 1, ../dev/sass/_player.scss */
 div.audio_player {
-  background: #dddedf;
+  background: white;
   height: 40px;
   margin-left: 40px;
   max-width: 555px;
@@ -9248,7 +9282,7 @@ div.audio_player div.play_btn {
 /* line 17, ../dev/sass/_player.scss */
 div.audio_player .progress_bar {
   display: inline-block;
-  background: #b6b8ba;
+  background: #307fe2;
   height: 100%;
   width: 0%;
   vertical-align: top;
@@ -9261,7 +9295,7 @@ div.audio_player .play {
 div.audio_player .duration, div.audio_player .audio_title {
   position: absolute;
   top: 2px;
-  color: #307fe2;
+  color: #3f4444;
   font-weight: 500;
   height: 40px;
   padding: 8px 30px 8px;

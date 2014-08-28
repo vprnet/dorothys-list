@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import markdown
 import math
+import arrow
 from urllib import urlretrieve
 from mutagen.mp3 import MP3
 from google_spreadsheet.api import SpreadsheetAPI
@@ -52,6 +53,13 @@ def last_years_books():
         for book in sheet_content:
             book['summary'] = markdown.markdown(book['summary'])
             url = book['audiourl']
+            if book['airdate']:
+                date_list = [int(x) for x in book['airdate'].split('/')]
+                date = arrow.get(date_list[2], date_list[0], date_list[1])
+                if (date - arrow.now()).days < 0:
+                    book['past'] = True
+                else:
+                    book['past'] = False
             if url in audio_lengths and audio_lengths[url]:
                 book['audiolength'] = audio_lengths[url]
             else:

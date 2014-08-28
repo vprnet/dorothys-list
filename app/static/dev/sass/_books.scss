@@ -1,5 +1,16 @@
 #books {
+    margin-bottom: 30px;
     .book {
+        background: lighten($gray, 45%);
+        border-right: 5px solid $blue;
+        padding: 10px;
+        .book_content {
+            min-height: 250px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
         margin-bottom: 30px;
     }
 }
