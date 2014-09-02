@@ -7,7 +7,6 @@ from upload_s3 import set_metadata
 from config import AWS_DIRECTORY
 
 app = Flask(__name__)
-app.config.from_object('config')
 
 from views import *
 
