@@ -23,7 +23,7 @@ class WebFactionMiddleware(object):
         self.app = app
 
     def __call__(self, environ, start_response):
-        environ['SCRIPT_NAME'] = PROJECT_ROOT
+        environ['SCRIPT_NAME'] = '/dorothy'
         return self.app(environ, start_response)
 
 app.wsgi_app = WebFactionMiddleware(app.wsgi_app)
