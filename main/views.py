@@ -1,12 +1,10 @@
-from index import app
-from flask import render_template, request
-from config import BASE_URL
-from query import above_the_fold, last_years_books
+from main import app
+from flask import render_template
+from get_content import above_the_fold, last_years_books
 
 
 @app.route('/')
 def index():
-    page_url = BASE_URL + request.path
     page_title = "#DorothysList"
     above_fold = above_the_fold()
     old_books = last_years_books()
@@ -24,5 +22,4 @@ def index():
         page_title=page_title,
         social=social,
         above_fold=above_fold,
-        old_books=old_books,
-        page_url=page_url)
+        old_books=old_books)
