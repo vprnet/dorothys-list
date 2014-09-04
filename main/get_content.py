@@ -1,6 +1,7 @@
 import markdown
 import math
 import arrow
+from config import ABSOLUTE_PATH
 from urllib import urlretrieve
 from mutagen.mp3 import MP3
 from sheet import get_google_sheet
@@ -23,7 +24,7 @@ def above_the_fold():
 
 def last_years_books():
     sheet_content = get_google_sheet(SPREADSHEET_KEY, sheet_id='ou6a4hm')
-    with open("main/audio.txt", "r+") as f:
+    with open(ABSOLUTE_PATH + "/audio.txt", "r+") as f:
         audio_lengths = eval(f.read())
         audio_dict = {}
         for book in sheet_content:
