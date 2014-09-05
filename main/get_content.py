@@ -22,9 +22,41 @@ def above_the_fold():
     return content
 
 
+def this_years_books():
+    sheet_content = get_google_sheet(SPREADSHEET_KEY, sheet_id='o9170sw')
+    with open(ABSOLUTE_PATH + "main/audio.txt", "r+") as f:
+        audio_lengths = eval(f.read())
+        audio_dict = {}
+        for book in sheet_content:
+            if book['summary']:
+                book['summary'] = markdown.markdown(book['summary'])
+            if book['audiourl']:
+                url = book['audiourl']
+                if book['airdate']:
+                    date_list = [int(x) for x in book['airdate'].split('/')]
+                    date = arrow.get(date_list[2], date_list[0], date_list[1])
+                    book['airdate'] = date
+                    if (date - arrow.now()).days < 0:
+                        book['past'] = True
+                    else:
+                        book['past'] = False
+                if url in audio_lengths and audio_lengths[url]:
+                    book['audiolength'] = audio_lengths[url]
+                else:
+                    filename, headers = urlretrieve(url)
+                    audio = MP3(filename)
+                    book['audiolength'] = math.floor(audio.info.length)
+                audio_dict[url] = book['audiolength']
+        f.seek(0)
+        f.write(str(audio_dict))
+    sorted_books = sorted(sheet_content, key=lambda k: k['airdate'])
+
+    return sorted_books
+
+
 def last_years_books():
     sheet_content = get_google_sheet(SPREADSHEET_KEY, sheet_id='ou6a4hm')
-    with open(ABSOLUTE_PATH + "main/audio.txt", "r+") as f:
+    with open(ABSOLUTE_PATH + "main/old-audio.txt", "r+") as f:
         audio_lengths = eval(f.read())
         audio_dict = {}
         for book in sheet_content:

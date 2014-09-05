@@ -1,3 +1,5 @@
+#!/usr/local/bin/python2.7
+
 from google_spreadsheet.api import SpreadsheetAPI
 from config import GOOGLE_SPREADSHEET
 
@@ -29,3 +31,6 @@ def get_google_sheet(sheet_key=False, sheet_id='od6'):
     sheet = api.get_worksheet(sheet_key, sheet_id)
     sheet_object = sheet.get_rows()
     return sheet_object
+
+
+list_sheets('19qKia2C2WKgQs4qbez_WHDoX1yVm6vvCDjXhJJyh8fo')

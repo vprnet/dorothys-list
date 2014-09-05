@@ -1,6 +1,29 @@
 {% import "_macros.html" as macros %}
 
 <div id="books">
+    {% for book in new_books if book.summary %}
+        <div class="book">
+            <div class="book_content row">
+                <img class="col-xs-4 img-responsive" src="{{ book.imageurl }}" alt="{{ book.title }} book cover">
+                <div class="book_detail col-xs-8">
+                    <p class="for_ages">For ages {{ book.agerange }}</p>
+                    <h3>{{ book.title }}</h3>
+                    <h4>By {{ book.author }}</h4>
+                    <div class="summary">{{ book.summary|safe }}</div>
+                </div>
+            </div>
+            {% if book.audiourl %}
+                {{ macros.player(book.audiourl, book.audiolength, "Listen") }}
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    {% for book in new_books if not book.summary %}
+        {% if loop.first %}<h2>The Rest Of The List</h2>{% endif %}
+        <h3>{{ book.title }}</h3>
+    {% endfor %}
+
+    <h2>Last Years Books</h2>
     {% for book in old_books %}
     {% if loop.first or loop.index0 is divisibleby 2 %}
     <div class="row">
@@ -10,8 +33,8 @@
                 <div class="book_content row">
                     <img class="col-xs-4 img-responsive" src="{{ book.imageurl }}" alt="{{ book.title }} book cover">
                     <div class="col-xs-8">
-                        <h2>{{ book.title }}</h2>
-                        <p>{{ book.summary|safe }}</p>
+                        <h3>{{ book.title }}</h3>
+                        <div>{{ book.summary|safe }}</div>
                     </div>
                 </div>
             {{ macros.player(book.audiourl, book.audiolength, "Listen") }}

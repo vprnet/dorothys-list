@@ -1,12 +1,13 @@
 from main import app
 from flask import render_template
-from get_content import above_the_fold, last_years_books
+from get_content import above_the_fold, last_years_books, this_years_books
 
 
 @app.route('/')
 def index():
     page_title = "#DorothysList"
     above_fold = above_the_fold()
+    new_books = this_years_books()
     old_books = last_years_books()
 
     social = {
@@ -22,4 +23,5 @@ def index():
         page_title=page_title,
         social=social,
         above_fold=above_fold,
+        new_books=new_books,
         old_books=old_books)
