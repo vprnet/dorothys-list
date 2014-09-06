@@ -9009,7 +9009,7 @@ div#above_fold .highlight {
     font-size: 12px;
   }
 }
-/* line 115, ../dev/sass/_books.scss */
+/* line 116, ../dev/sass/_books.scss */
 #books .rest_of_list h4 {
   font-size: 24px;
   font-size: 18px;
@@ -9018,40 +9018,40 @@ div#above_fold .highlight {
   font-weight: 400;
 }
 @media (max-width: 500px) {
-  /* line 115, ../dev/sass/_books.scss */
+  /* line 116, ../dev/sass/_books.scss */
   #books .rest_of_list h4 {
     font-size: 14px;
   }
 }
-/* line 126, ../dev/sass/_books.scss */
+/* line 127, ../dev/sass/_books.scss */
 #books #last_year {
   margin-bottom: 50px;
 }
-/* line 128, ../dev/sass/_books.scss */
+/* line 129, ../dev/sass/_books.scss */
 #books #last_year .book {
   padding: 10px;
 }
-/* line 130, ../dev/sass/_books.scss */
+/* line 131, ../dev/sass/_books.scss */
 #books #last_year .book h3 {
   margin: 0 0 5px;
 }
-/* line 133, ../dev/sass/_books.scss */
+/* line 134, ../dev/sass/_books.scss */
 #books #last_year .book h4 {
   margin-top: 5px;
   color: #75787b;
   font-weight: 400;
 }
-/* line 138, ../dev/sass/_books.scss */
+/* line 139, ../dev/sass/_books.scss */
 #books #last_year .book i.icon {
   padding-right: 10px;
 }
-/* line 144, ../dev/sass/_books.scss */
+/* line 145, ../dev/sass/_books.scss */
 #books #last_year h2, #books .rest_of_list h2 {
   font-size: 32px;
   font-weight: 500;
 }
 @media (max-width: 500px) {
-  /* line 144, ../dev/sass/_books.scss */
+  /* line 145, ../dev/sass/_books.scss */
   #books #last_year h2, #books .rest_of_list h2 {
     font-size: 24px;
   }
