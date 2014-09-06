@@ -16,8 +16,8 @@ DL.buttonClick = function() {
         }
     }
     if (thisTab === 'scrapbook' && typeof DL.iframe.attr("src") === 'undefined') {
-        DL.iframe.attr("src", "//storify.com/vprnet/town-meeting-day-in-vermont-2014/embed?header=false&border=false");
-        $('#iframe_script').attr('src', 'storify.com/vprnet/town-meeting-day-in-vermont-2014.js?header=false&border=false');
+        DL.iframe.attr("src", "//storify.com/vprnet/dorothy-s-list-scrapbook/embed?border=false");
+        $('#iframe_script').attr('src', "//storify.com/vprnet/dorothy-s-list-scrapbook.js?border=false");
     }
 };
 

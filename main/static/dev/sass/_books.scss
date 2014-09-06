@@ -1,42 +1,149 @@
 #books {
     margin-bottom: 30px;
     h2 {
-        text-align: center;
-        font-size: 72px;
-        font-weight: 200;
         margin-bottom: 40px;
+        @media (max-width: $tablet) {
+            margin-bottom: 20px;
+        }
     }
     .book {
         background: lighten($gray, 45%);
         border-right: 5px solid $blue;
+        margin-bottom: 30px;
         .book_content {
             min-height: 250px;
             margin-bottom: 20px;
+            img {
+                @media (max-width: $tablet) {
+                    margin: 0 auto 20px;
+                }
+            }
+            .book_detail {
+                padding: 10px 25px 10px 15px;
+                @media (max-width: $tablet) {
+                    padding-left: 30px;
+                }
+                h3 {
+                    margin-top: 0;
+                    font-size: 42px;
+                    @media (max-width: $big-screen) {
+                        font-size: 28px;
+                    }
+                    @media (max-width: $laptop) {
+                        font-size: 24px;
+                    }
+                    margin-bottom: 0;
+                }
+                p.for_ages {
+                    margin-bottom: 0;
+                    font-size: 18px;
+                    @media (max-width: $big-screen) {
+                        font-size: 14px;
+                    }
+                    color: $gray;
+                }
+                h4 {
+                    font-size: 24px;
+                    @media (max-width: $big-screen) {
+                        font-size: 18px;
+                    }
+                    margin-top: 5px;
+                    color: $gray;
+                    margin-bottom: 30px;
+                    @media (max-width: $big-screen) {
+                        margin-bottom: 15px;
+                    }
+                    font-weight: 400;
+                }
+                div.summary {
+                    font-size: 22px;
+                    @media (max-width: $big-screen) {
+                        font-size: 18px;
+                    }
+                    @media (max-width: $laptop) {
+                        font-size: 15px;
+                    }
+                    font-weight: 300;
+                    margin-bottom: 30px;
+                }
+                p.airdate {
+                    font-size: 16px;
+                    color: $gray;
+                    i.glyphicon {
+                        padding-right: 10px;
+                    }
+                    @media (max-width: $phone) {
+                        font-size: 14px;
+                    }
+                }
+                p.read_post {
+                    font-size: 16px;
+                    text-align: right;
+                    i.icon {
+                        padding-right: 10px;
+                    }
+                }
+                .audio_player {
+                    margin-bottom: 10px;
+                }
+            }
         }
-        .book_detail {
-            padding: 10px 15px;
-        }
+    }
+    .rest_of_list {
+        text-align: center;
+        margin-bottom: 50px;
         h3 {
             margin-top: 0;
-            font-size: 42px;
+            font-size: 32px;
+            @media (max-width: $big-screen) {
+                font-size: 28px;
+            }
+            @media (max-width: $tablet) {
+                font-size: 22px;
+            }
+            @media (max-width: $phone) {
+                font-size: 18px;
+            }
             margin-bottom: 0;
         }
-        p.for_ages {
+        p.age_range{
             margin-bottom: 0;
             font-size: 18px;
+            @media (max-width: $big-screen) {
+                font-size: 14px;
+            }
+            @media (max-width: $phone) {
+                font-size: 12px;
+            }
             color: $gray;
         }
         h4 {
             font-size: 24px;
+            @media (max-width: $big-screen) {
+                font-size: 18px;
+            }
+            @media (max-width: $phone) {
+                font-size: 14px;
+            }
             margin-top: 5px;
             color: $gray;
-            margin-bottom: 30px;
             font-weight: 400;
         }
-        margin-bottom: 30px;
-        div.summary {
-            font-size: 22px;
-            font-weight: 300;
+    }
+    #last_year {
+        .book {
+            padding: 10px;
+            h3 {
+                margin: 0 0 5px;
+            }
+            h4 {
+                margin-top: 5px;
+                color: $gray;
+                font-weight: 400;
+            }
+            i.icon {
+                padding-right: 10px;
+            }
         }
     }
 }

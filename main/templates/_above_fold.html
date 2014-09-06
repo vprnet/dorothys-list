@@ -1,14 +1,19 @@
-<div class="above_fold row">
-    <div class="col-sm-4">
-        <img class="img-responsive" src="{{ above_fold.image }}" alt="Dorothy's List cover image">
-    </div>
-    <div class="col-sm-8">
-        <h1>{{ above_fold.headline }}</h1>
-        {% for par in above_fold['copy'] %}
-            {{ par|safe }}
-        {% endfor %}
-        <div class="highlight">
-            {{ above_fold.highlight|safe }}
+<div id="above_fold">
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="img-responsive" src="{{ above_fold.image }}" alt="Dorothy's List cover image">
         </div>
+        <div class="col-sm-8">
+            <h1>{{ above_fold.headline }}</h1>
+            {% for par in above_fold['copy'] %}
+                {{ par|safe }}
+            {% endfor %}
+            <div class="highlight big_screen">
+                {{ above_fold.highlight|safe }}
+            </div>
+        </div>
+    </div>
+    <div class="highlight small_screen">
+        {{ above_fold.highlight|safe }}
     </div>
 </div>

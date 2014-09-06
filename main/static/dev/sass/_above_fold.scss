@@ -1,14 +1,38 @@
-div.above_fold {
+div#above_fold {
+    h1 {
+        @media (max-width: $tablet) {
+            font-size: 32px;
+        }
+        @media (max-width: $phone) {
+            font-size: 24px;
+        }
+    }
     img {
         margin: 20px auto 30px;
     }
     p {
         font-size: 18px;
+        @media (max-width: $laptop) {
+            font-size: 16px;
+        }
+        @media (max-width: $phone) {
+            font-size: 14px;
+        }
     }
     .highlight {
         margin-top: 25px;
         background: lighten($blue, 40%);
         padding: 15px 10px 10px;
         text-align: center;
+        &.big_screen {
+            @media (max-width: $laptop) {
+                display: none;
+            }
+        }
+        &.small_screen {
+            @media (min-width: $laptop) {
+                display: none;
+            }
+        }
     }
 }

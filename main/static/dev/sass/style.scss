@@ -9,7 +9,7 @@
 @import "player";
 
 div#button_nav {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     button {
         width: 100%;
         @media (max-width: $tablet) {
@@ -29,4 +29,17 @@ div#button_nav {
             background: darken($green, 5%);
         }
     }
+}
+
+h2 {
+    text-align: center;
+    font-size: 72px;
+    @media (max-width: $big-screen) {
+        font-size: 42px;
+    }
+    @media (max-width: $phone) {
+        font-size: 24px;
+    }
+    font-weight: 200;
+    text-decoration: underline;
 }
