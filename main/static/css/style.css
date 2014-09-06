@@ -8981,14 +8981,8 @@ div#above_fold .highlight {
 /* line 95, ../dev/sass/_books.scss */
 #books .rest_of_list h3 {
   margin-top: 0;
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 0;
-}
-@media (max-width: 1200px) {
-  /* line 95, ../dev/sass/_books.scss */
-  #books .rest_of_list h3 {
-    font-size: 28px;
-  }
 }
 @media (max-width: 768px) {
   /* line 95, ../dev/sass/_books.scss */
@@ -9002,60 +8996,65 @@ div#above_fold .highlight {
     font-size: 18px;
   }
 }
-/* line 109, ../dev/sass/_books.scss */
+/* line 106, ../dev/sass/_books.scss */
 #books .rest_of_list p.age_range {
   margin-bottom: 0;
   font-size: 18px;
+  font-size: 14px;
   color: #75787b;
 }
-@media (max-width: 1200px) {
-  /* line 109, ../dev/sass/_books.scss */
-  #books .rest_of_list p.age_range {
-    font-size: 14px;
-  }
-}
 @media (max-width: 500px) {
-  /* line 109, ../dev/sass/_books.scss */
+  /* line 106, ../dev/sass/_books.scss */
   #books .rest_of_list p.age_range {
     font-size: 12px;
   }
 }
-/* line 120, ../dev/sass/_books.scss */
+/* line 115, ../dev/sass/_books.scss */
 #books .rest_of_list h4 {
   font-size: 24px;
+  font-size: 18px;
   margin-top: 5px;
   color: #75787b;
   font-weight: 400;
 }
-@media (max-width: 1200px) {
-  /* line 120, ../dev/sass/_books.scss */
-  #books .rest_of_list h4 {
-    font-size: 18px;
-  }
-}
 @media (max-width: 500px) {
-  /* line 120, ../dev/sass/_books.scss */
+  /* line 115, ../dev/sass/_books.scss */
   #books .rest_of_list h4 {
     font-size: 14px;
   }
 }
-/* line 134, ../dev/sass/_books.scss */
+/* line 126, ../dev/sass/_books.scss */
+#books #last_year {
+  margin-bottom: 50px;
+}
+/* line 128, ../dev/sass/_books.scss */
 #books #last_year .book {
   padding: 10px;
 }
-/* line 136, ../dev/sass/_books.scss */
+/* line 130, ../dev/sass/_books.scss */
 #books #last_year .book h3 {
   margin: 0 0 5px;
 }
-/* line 139, ../dev/sass/_books.scss */
+/* line 133, ../dev/sass/_books.scss */
 #books #last_year .book h4 {
   margin-top: 5px;
   color: #75787b;
   font-weight: 400;
 }
-/* line 144, ../dev/sass/_books.scss */
+/* line 138, ../dev/sass/_books.scss */
 #books #last_year .book i.icon {
   padding-right: 10px;
+}
+/* line 144, ../dev/sass/_books.scss */
+#books #last_year h2, #books .rest_of_list h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+@media (max-width: 500px) {
+  /* line 144, ../dev/sass/_books.scss */
+  #books #last_year h2, #books .rest_of_list h2 {
+    font-size: 24px;
+  }
 }
 
 /* line 1, ../dev/sass/_about.scss */
@@ -9173,7 +9172,6 @@ div#button_nav button.btn-success:hover {
 h2 {
   text-align: center;
   font-size: 72px;
-  font-weight: 200;
   text-decoration: underline;
 }
 @media (max-width: 1200px) {
@@ -9186,5 +9184,11 @@ h2 {
   /* line 34, ../dev/sass/style.scss */
   h2 {
     font-size: 24px;
+  }
+}
+@media (min-width: 1000px) {
+  /* line 34, ../dev/sass/style.scss */
+  h2 {
+    font-weight: 200;
   }
 }

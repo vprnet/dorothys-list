@@ -24,42 +24,38 @@
         </div>
     {% endfor %}
 
-    <div class="rest_of_list">
-        <h2>The Rest Of The List</h2>
-        {% for book in new_books if not book.summary %}
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <hr>
+    <div class="row">
+        <div class="col-md-7">
+            <div id="last_year">
+                <h2>Last Year's Books</h2>
+                {% for book in old_books %}
+                    <div class="book">
+                        <div class="book_content row">
+                            <img class="col-sm-4 img-responsive" src="{{ book.imageurl }}" alt="{{ book.title }} book cover">
+                            <div class="col-sm-8">
+                                <h3>{{ book.title }}</h3>
+                                <h4>By {{ book.author }}</h4>
+                                <div>{{ book.summary|safe }}</div>
+                                <p class="read_post"><a href="{{ book.posturl }}" alt="{{ book.title }} original post"><i class="icon ion-document-text"></i> Read Original Post</a></p>
+                            </div>
+                        </div>
+                    {{ macros.player(book.audiourl, book.audiolength, "Listen") }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="rest_of_list">
+                <h2>The Rest Of This Year's Books</h2>
+                {% for book in new_books if not book.summary %}
+                    {% if not loop.first %}<hr>{% endif %}
                     <p class="age_range">{{ book.agerange }}</p>
                     <h3>{{ book.title }}</h3>
                     <h4>By {{ book.author }}</h4>
-                    {% if loop.last %}<hr>{% endif %}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-
-    <h2>Last Years Books</h2>
-    {% for book in old_books %}
-    {% if loop.first or loop.index0 is divisibleby 2 %}
-    <div id="last_year" class="row">
-    {% endif %}
-        <div class="col-md-6">
-            <div class="book">
-                <div class="book_content row">
-                    <img class="col-sm-4 img-responsive" src="{{ book.imageurl }}" alt="{{ book.title }} book cover">
-                    <div class="col-sm-8">
-                        <h3>{{ book.title }}</h3>
-                        <h4>By {{ book.author }}</h4>
-                        <div>{{ book.summary|safe }}</div>
-                        <p class="read_post"><a href="{{ book.posturl }}" alt="{{ book.title }} original post"><i class="icon ion-document-text"></i> Read Original Post</a></p>
-                    </div>
-                </div>
-            {{ macros.player(book.audiourl, book.audiolength, "Listen") }}
+                {% endfor %}
             </div>
         </div>
-    {% if loop.last or loop.index is divisibleby 2 %}
     </div>
-    {% endif %}
-    {% endfor %}
+
 </div>

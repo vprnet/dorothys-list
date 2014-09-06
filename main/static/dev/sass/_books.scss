@@ -94,10 +94,7 @@
         margin-bottom: 50px;
         h3 {
             margin-top: 0;
-            font-size: 32px;
-            @media (max-width: $big-screen) {
-                font-size: 28px;
-            }
+            font-size: 28px;
             @media (max-width: $tablet) {
                 font-size: 22px;
             }
@@ -109,9 +106,7 @@
         p.age_range{
             margin-bottom: 0;
             font-size: 18px;
-            @media (max-width: $big-screen) {
-                font-size: 14px;
-            }
+            font-size: 14px;
             @media (max-width: $phone) {
                 font-size: 12px;
             }
@@ -119,9 +114,7 @@
         }
         h4 {
             font-size: 24px;
-            @media (max-width: $big-screen) {
-                font-size: 18px;
-            }
+            font-size: 18px;
             @media (max-width: $phone) {
                 font-size: 14px;
             }
@@ -131,6 +124,7 @@
         }
     }
     #last_year {
+        margin-bottom: 50px;
         .book {
             padding: 10px;
             h3 {
@@ -143,6 +137,15 @@
             }
             i.icon {
                 padding-right: 10px;
+            }
+        }
+    }
+    #last_year, .rest_of_list {
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            @media (max-width: $phone) {
+                font-size: 24px;
             }
         }
     }

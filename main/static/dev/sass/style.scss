@@ -40,6 +40,8 @@ h2 {
     @media (max-width: $phone) {
         font-size: 24px;
     }
-    font-weight: 200;
+    @media (min-width: $laptop) {
+        font-weight: 200;
+    }
     text-decoration: underline;
 }
