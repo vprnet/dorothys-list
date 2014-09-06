@@ -82,7 +82,10 @@ def set_metadata():
         else:
             f = filename
 
-        k.set_metadata('Content-Type', mimetypes.types_map[ext])
+        try:
+            k.set_metadata('Content-Type', mimetypes.types_map[ext])
+        except KeyError:
+            pass
         etag_hash = hashlib.sha1(f + str(time.time())).hexdigest()
         k.set_metadata('ETag', etag_hash)
         k.set_contents_from_filename(f)
