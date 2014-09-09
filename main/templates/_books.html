@@ -47,7 +47,7 @@
 
         <div class="col-md-5">
             <div class="rest_of_list">
-                <h2>The Rest Of This Year's Books</h2>
+                <h2>Other Books On The List</h2>
                 {% for book in new_books if not book.summary %}
                     {% if not loop.first %}<hr>{% endif %}
                     <p class="age_range">{{ book.agerange }}</p>
