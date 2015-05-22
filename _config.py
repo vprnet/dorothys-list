@@ -8,7 +8,7 @@ DEBUG = True
 AWS_KEY = ''
 AWS_SECRET_KEY = ''
 AWS_BUCKET = 'www.vpr.net'
-AWS_DIRECTORY = 'sandbox/app/'
+AWS_DIRECTORY = 'sandbox/dorothy/'
 
 NPR_API_KEY = ''
 
