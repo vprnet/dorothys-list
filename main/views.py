@@ -1,7 +1,6 @@
 from main import app
 from flask import render_template, request
-from get_content import above_the_fold, this_years_books
-# last_years_books,
+from get_content import above_the_fold, this_years_books, last_years_books
 from config import FREEZER_BASE_URL
 
 
@@ -11,7 +10,7 @@ def index():
     page_url = FREEZER_BASE_URL.rstrip('/') + request.path
     above_fold = above_the_fold()
     new_books = this_years_books()
-    # old_books = last_years_books()
+    old_books = last_years_books()
 
     social = {
         'title': "Dorothy's List",
@@ -27,5 +26,5 @@ def index():
         page_title=page_title,
         social=social,
         above_fold=above_fold,
-        new_books=new_books)
-        # old_books=old_books)
+        new_books=new_books,
+        old_books=old_books)
