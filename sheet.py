@@ -1,36 +1,43 @@
-#!/usr/local/bin/python2.7
+import json
+import gspread
+from oauth2client.client import SignedJwtAssertionCredentials
 
-from google_spreadsheet.api import SpreadsheetAPI
-from config import GOOGLE_SPREADSHEET
+def get_above_fold():
+    json_key = json.load(open('access.json'))
+    scope = ['https://spreadsheets.google.com/feeds']
+    credentials = SignedJwtAssertionCredentials(json_key["client_email"], json_key['private_key'], scope)
+    authorization = gspread.authorize(credentials)
+    spreadsheet = authorization.open("Dorothy's List")
+    worksheet = spreadsheet.get_worksheet(0)
 
+    return worksheet.get_all_records()
 
-def list_sheets(key=False):
-    """If no key passed, lists spreadsheet keys for the user defined in
-    config file. If key passed as argument, lists ids of individual sheets"""
+def get_this_year():
+    json_key = json.load(open('access.json'))
+    scope = ['https://spreadsheets.google.com/feeds']
+    credentials = SignedJwtAssertionCredentials(json_key["client_email"], json_key['private_key'], scope)
+    authorization = gspread.authorize(credentials)
+    spreadsheet = authorization.open("Dorothy's List")
+    worksheet = spreadsheet.get_worksheet(1)
 
-    api = SpreadsheetAPI(GOOGLE_SPREADSHEET['USER'],
-        GOOGLE_SPREADSHEET['PASSWORD'],
-        GOOGLE_SPREADSHEET['SOURCE'])
-    spreadsheets = api.list_spreadsheets()
-    if key:
-        worksheets = api.list_worksheets(key)
-        print worksheets
-    else:
-        for sheet in spreadsheets:
-            print sheet
+    return worksheet.get_all_records()
 
-
-def get_google_sheet(sheet_key=False, sheet_id='od6'):
-    """Uses python_google_spreadsheet API to interact with sheet
-    https://github.com/yoavaviram/python-google-spreadsheet
-    Returns a list of dicts with each row its own list with the first row key"""
-
-    api = SpreadsheetAPI(GOOGLE_SPREADSHEET['USER'],
-        GOOGLE_SPREADSHEET['PASSWORD'],
-        GOOGLE_SPREADSHEET['SOURCE'])
-    sheet = api.get_worksheet(sheet_key, sheet_id)
-    sheet_object = sheet.get_rows()
-    return sheet_object
-
-
-list_sheets('19qKia2C2WKgQs4qbez_WHDoX1yVm6vvCDjXhJJyh8fo')
+# def get_2013_2014():
+#     json_key = json.load(open('access.json'))
+#     scope = ['https://spreadsheets.google.com/feeds']
+#     credentials = SignedJwtAssertionCredentials(json_key["client_email"], json_key['private_key'], scope)
+#     authorization = gspread.authorize(credentials)
+#     spreadsheet = authorization.open("Dorothy's List")
+#     worksheet = spreadsheet.get_worksheet(2)
+#
+#     return worksheet.get_all_records()
+#
+# def get_about():
+#     json_key = json.load(open('access.json'))
+#     scope = ['https://spreadsheets.google.com/feeds']
+#     credentials = SignedJwtAssertionCredentials(json_key["client_email"], json_key['private_key'], scope)
+#     authorization = gspread.authorize(credentials)
+#     spreadsheet = authorization.open("Dorothy's List")
+#     worksheet = spreadsheet.get_worksheet(3)
+#
+#     return worksheet.get_all_records()
