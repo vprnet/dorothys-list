@@ -15,7 +15,7 @@ def index():
     social = {
         'title': "Dorothy's List",
         'subtitle': "VPR's Book Club For Kids",
-        'img': 'http://www.vpr.net/apps/dorothys-list/static/img/dorothys-list-collage.png',
+        'img': 'http://mediad.publicbroadcasting.net/p/vpr/files/201509/vpr-dorothy-main-image.jpg',
         'description': "Each month VPR highlights a book nominated for the Dorothy Canfield Fisher Children's Book Award.",
         'twitter_text': "Read along with Dorothy's List, a VPR book club for kids:",
         'twitter_hashtag': 'books,reading'

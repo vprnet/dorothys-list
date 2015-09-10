@@ -1,7 +1,6 @@
 {% import "_macros.html" as macros %}
 
 <div id="books">
-    <h2>Featured This Year</h2>
     {% for book in new_books if book.summary %}
         <div class="book">
             <div class="book_content row">
