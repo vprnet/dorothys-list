@@ -8859,6 +8859,7 @@ div#above_fold .highlight {
 /* line 13, ../dev/sass/_books.scss */
 #books .book .book_content {
   min-height: 250px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
