@@ -10,7 +10,13 @@
                 <div class="book_detail col-sm-8">
                     <p class="for_ages">{{ book.agerange }}</p>
                     <h3>{{ book.title }}</h3>
-                    <h4>By {{ book.author }}</h4>
+
+                    {% if book.author == "2015-2016 Summary" %}
+                      <h4>{{ book.author }}</h4>
+                    {% else %}
+                      <h4>By {{ book.author }}</h4>
+                    {% endif %}
+
                     <div class="summary">{{ book.summary|safe }}</div>
                     {% if book.audiourl %}
                         {{ macros.player(book.audiourl, book.audiolength, "Listen") }}
